@@ -161,5 +161,8 @@ binance_trades.csv
 *.csv.gz
 *.parquet
 
+# Tests
+tests/
+
 # Ignore large video files (assistant)
 src/data/chat_agent/*.mov

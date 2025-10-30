@@ -1170,15 +1170,73 @@ def get_token_balance_usd(token_mint_address):
     try:
         # Get the position data using existing function
         df = fetch_wallet_token_single(address, token_mint_address)  # Using address from config
-        
+
         if df.empty:
             print(f"🔍 No position found for {token_mint_address[:8]}")
             return 0.0
-            
+
         # Get the USD Value from the dataframe
         usd_value = df['USD Value'].iloc[0]
         return float(usd_value)
-        
+
     except Exception as e:
         print(f"❌ Error getting token balance: {str(e)}")
         return 0.0
+
+
+# ============================================================================
+# FOREX DATA UTILITIES - MS SQL Integration
+# ============================================================================
+
+def get_forex_data(pair, timeframe, start_date=None, end_date=None, limit=None):
+    """
+    Get forex OHLCV data from MS SQL database.
+
+    Args:
+        pair: Currency pair (e.g., 'EUR_USD', 'EURUSD', 'EUR/USD')
+        timeframe: Timeframe code (M1, M5, M15, H1, H4, D)
+        start_date: Optional start date (YYYY-MM-DD)
+        end_date: Optional end date (YYYY-MM-DD)
+        limit: Optional row limit (most recent)
+
+    Returns:
+        DataFrame with OHLCV data indexed by candleTime
+
+    Example:
+        df = get_forex_data('EUR_USD', 'H1', start_date='2024-01-01')
+    """
+    from src.forex_data import load_forex_data
+    return load_forex_data(pair, timeframe, start_date, end_date, limit=limit)
+
+
+def get_forex_pairs():
+    """
+    Get list of all available forex pairs from database.
+
+    Returns:
+        List of 67 forex pair strings
+
+    Example:
+        pairs = get_forex_pairs()
+        print(f"Available: {len(pairs)} pairs")
+    """
+    from src.forex_data import get_forex_pairs as _get_pairs
+    return _get_pairs()
+
+
+def get_forex_timeframes(pair):
+    """
+    Get available timeframes for a specific forex pair.
+
+    Args:
+        pair: Forex pair (e.g., 'EUR_USD')
+
+    Returns:
+        List of timeframe codes (e.g., ['M1', 'M5', 'H1', 'D'])
+
+    Example:
+        tfs = get_forex_timeframes('EUR_USD')
+        print(f"EUR_USD timeframes: {tfs}")
+    """
+    from src.forex_data import get_forex_timeframes as _get_tfs
+    return _get_tfs(pair)

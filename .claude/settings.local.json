@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:pypi.org)",
+      "Bash(python:*)",
+      "Bash(pip install:*)",
+      "Bash(findstr:*)",
+      "Bash(powershell -Command \"Get-Content ''D:\\dev\\moon-dev-ai-agents\\src\\nice_funcs.py'' | Measure-Object -Line\")",
+      "Bash(conda info:*)",
+      "Bash(where:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
