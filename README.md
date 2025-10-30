@@ -5,7 +5,7 @@
 </p>
 
 ## 🎯 Vision
-ai agents are clearly the future and the entire workforce will be replaced or atleast using ai agents. while i am a quant and building agents for algo trading i will be contributing to all different types of ai agent flows and placing all of the agents here for free, 100% open sourced because i beleive code is the great equalizer and we have never seen a regime shift like this so i need to get this code to the people
+ai agents are clearly the future and the entire workforce will be replaced or atleast using ai agents. while i am a quant and building agents for algo trading i will be contributing to all different types of ai agent flows and placing all of the agents here for free, 100% open sourced because i believe code is the great equalizer and we have never seen a regime shift like this so i need to get this code to the people
 
 feel free to join [our discord](https://discord.gg/8UPuVZ53bh) if you beleive ai agents will be integrated into the workforce
 
@@ -56,12 +56,13 @@ feel free to join [our discord](https://discord.gg/8UPuVZ53bh) if you beleive ai
 ### Content Creation Agents
 - **Chat Agent** (`chat_agent.py`): Monitors YouTube live stream chat, moderates & responds to known questions. Absolute fire.
 - **Twitter Agent** (`tweet_agent.py`): Takes in text and creates tweets using DeepSeek or other models
-- **Video Agent** (`video_agent.py`): Takes in text to create videos by creating audio snippets using ElevenLabs and combining with raw_video footage
+- **Video Agent** (`video_agent.py`): 🎬 Parallel AI video generation using OpenAI's Sora 2 API - create videos directly from text prompts with 9 concurrent workers, configurable resolutions (720p/1080p), durations (4/8/12s), and aspect ratios (9:16 for TikTok/Reels, 16:9 for YouTube, 1:1 for Instagram). [See full docs](docs/video_agent.md)
 - **Clips Agent** (`clips_agent.py`): Helps clip long videos into shorter ones so you can upload to your YouTube and get paid. More info: https://discord.gg/XAw8US9aHT
 - **Real-Time Clips Agent** (`realtime_clips_agent.py`): Makes real-time clips of streamers using OBS
 - **Phone Agent** (`phone_agent.py`): An AI agent that can take phone calls for you
 
 ### Specialized Agents
+- **Prompt Agent** (`prompt_agent.py`): 🎯 Interactive prompt enhancement tool that transforms basic prompts into professional, production-ready prompts using best practices from Parahelp & Cursor. Stays open in terminal, continuously ready to enhance your prompts with expert design principles (role-based prompting, structured formatting, explicit thinking order). Auto-saves and copies enhanced prompts. Perfect for improving prompts for any AI task. [See full docs](docs/prompt_agent.md)
 - **Focus Agent** (`focus_agent.py`): Randomly samples audio during coding sessions to maintain productivity, providing focus scores and voice alerts when focus drops (~$10/month, perfect for voice-to-code workflows)
 - **Million Agent** (`million_agent.py`): Uses million context window from Gemini to pull in a knowledge base
 - **TikTok Agent** (`tiktok_agent.py`): Scrolls TikTok and gets screenshots of the video + comments to extract consumer data to feed into algos. Sometimes called social arbitrage
